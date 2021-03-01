@@ -1,5 +1,4 @@
-﻿
-using MediatR;
+﻿using MediatR;
 using System;
 using System.Windows.Forms;
 using WinFormCA.Forms;
@@ -7,13 +6,13 @@ using WinFromCA.Application.CommonContext.Queries.GetTodayDate;
 
 namespace WinFormCA
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private readonly IMediator _mediator;
         private readonly Form2 _form2;
         private readonly RadForm1 _radform;
 
-        public Form1(IMediator mediator, Form2 form2, RadForm1 radform)
+        public MainForm(IMediator mediator, Form2 form2, RadForm1 radform)
         {
             _mediator = mediator;
             _form2 = form2;
