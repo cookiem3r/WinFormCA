@@ -2,6 +2,8 @@ using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Serilog;
+using Serilog.Extensions.Autofac.DependencyInjection;
 using System.Windows.Forms;
 using WinFormCA.Common.IOC;
 using WinFormCA.Infrastructure.Common.Extensions;
@@ -28,15 +30,33 @@ namespace WinFormCA
                 .AddApplicationInjections()
                 .AddInfrastructureInjections()
                 .AddPersistenceInjections();
+                
             })
             .UseServiceProviderFactory(new AutofacServiceProviderFactory())
             .ConfigureContainer<ContainerBuilder>(builder =>
             {
+               
+
                 //Registering Components in the Autofac ContainerBuilder
                 builder.RegisterModule(new InfrastructureModule());
                 builder.RegisterModule(new PersistenceModule());
                 builder.RegisterModule(new ApplicationModule());
                 builder.RegisterModule(new FormModule());
+                builder.Register<ILogger>((c, p) =>
+                {
+                    var Logger = new LoggerConfiguration()
+                                   .MinimumLevel.Debug()
+                                   .WriteTo.Console()
+                                   .WriteTo.File("logs/WinFormCAlog.txt", rollingInterval: RollingInterval.Day)
+                                   .CreateLogger();
+                    return Logger;
+                }).SingleInstance();
+
+                //builder.RegisterSerilog(new LoggerConfiguration()
+                //.MinimumLevel.Debug()
+                //.WriteTo.Console()
+                //.WriteTo.File("logs/WinFormCAlog.txt", rollingInterval: RollingInterval.Day));
+            
             })
             .UseConsoleLifetime()
             .Build();

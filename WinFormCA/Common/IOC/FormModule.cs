@@ -12,7 +12,7 @@ namespace WinFormCA.Common.IOC
             //Register All Forms
             var assembly = Assembly.GetExecutingAssembly();
             builder.RegisterAssemblyTypes(assembly)
-                .AssignableTo<Form>();
+                .AssignableTo<Form>().SingleInstance();
 
             //Register All RadForms
             builder.RegisterAssemblyTypes(assembly)

@@ -10,6 +10,7 @@
     <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
     <PackageReference Include="MediatR" Version="9.0.0" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+    <PackageReference Include="Serilog.Extensions.Autofac.DependencyInjection" Version="4.0.0" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WinFormCA.Domain\WinFormCA.Domain.csproj" />
@@ -19,5 +20,8 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="UI.for.WinForms.AllControls.NetCore" Version="2020.3.1020" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\Configuration\" />
   </ItemGroup>
 </Project>
