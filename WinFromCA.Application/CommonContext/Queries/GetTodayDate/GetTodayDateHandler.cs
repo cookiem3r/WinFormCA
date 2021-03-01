@@ -3,7 +3,7 @@ using MediatR;
 using System;
 using System.Threading;
 using System.Threading.Tasks;
-using WinFromCA.Application.Interface;
+using WinFromCA.Application.Interfaces;
 
 namespace WinFromCA.Application.CommonContext.Queries.GetTodayDate
 {

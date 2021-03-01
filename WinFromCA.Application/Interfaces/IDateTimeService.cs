@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace WinFromCA.Application.Interface
+namespace WinFromCA.Application.Interfaces
 {
     public interface IDateTimeService
     {

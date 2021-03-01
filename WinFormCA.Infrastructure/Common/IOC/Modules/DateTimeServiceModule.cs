@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using WinFormCA.Infrastructure.Services;
-using WinFromCA.Application.Interface;
+using WinFromCA.Application.Interfaces;
 
 namespace WinFormCA.Infrastructure.Common.IOC.Modules
 {

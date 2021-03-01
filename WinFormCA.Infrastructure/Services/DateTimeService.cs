@@ -1,5 +1,5 @@
 ﻿using System;
-using WinFromCA.Application.Interface;
+using WinFromCA.Application.Interfaces;
 
 namespace WinFormCA.Infrastructure.Services
 {

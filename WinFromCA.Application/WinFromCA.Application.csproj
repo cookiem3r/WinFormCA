@@ -79,7 +79,7 @@
     <Compile Include="CommonContext\Queries\GetTodayDate\GetTodayDateQuery.cs" />
     <Compile Include="Common\Extensions\DependencyInjectionExtensions.cs" />
     <Compile Include="Common\IOC\ApplicationModule.cs" />
-    <Compile Include="Interface\IDateTimeService.cs" />
+    <Compile Include="Interfaces\IDateTimeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
